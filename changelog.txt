@@ -1,0 +1,64 @@
+# Script edited with Filtration - https://github.com/ben-wallis/Filtration
+# ---------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# Marr's Loot Filter UI v.2.5.0.a
+# 20170210
+# 
+# created by Mardread
+# 
+# # Version 2.5.0.a
+# 
+# - Added Backgrounds: Normal-Alt (White derived)
+# - Added Text: Magic
+# - Adjusted Categories some more
+# - Adjusted font sizes: Normal=25, Magic=30, Rare=35, Unique=40 (low level magic items are size 25)
+# - Adjusted leveling ranges for normal/magic items
+# - Changed color schemes for leveling ranges
+# - Removed corruption categories in leveling ranges
+# - Removed redundancy in leveling ranges
+# 
+# # Version 2.5.0 -
+# 
+# - Revised from top -> down.  Lootfilter is now more in-line with item breakdown from PoE wiki
+# - Revised version # to be similar to current PoE game version
+# - Added Backgrounds: Normal, Quality, Corruption, Rarity, Non-Equipment, League
+# - Added Borders: Normal, Rarity, Quest, RBG, Corruption
+# - Added Text: Default, Rarity
+# - Added Essences, Splinters, Blessings, Breachstones, Map Fragments
+# - Added League Items
+# - Adjusted categories better, renaming all of them and placing them in a more functional order
+# - Adjusted font sizes: Normal=24, Magic=27, Rare=30, Unique=33
+# - Changed majority of default colors to a color scheme by Viget.com
+# - Removed Backgrounds-Jewels, Currency, Maps, Jewelry, Flasks, Quests, Divination Cards
+# - Removed Borders-Sockets, Superior
+# - Removed Previous League Items that were discontinued
+# 
+# Version 2.4 -
+# 
+# - Removed Orb of Elemental Essence
+# 
+# Version 2.3 -
+# 
+# - added Silver Coin to Currency Section
+# 
+# Version 2.0 -
+# 
+# - rearranged categories
+# - used Neversink's filter as a guide to include item leveling
+# - included item leveling
+# - readjusted font sizes.  Normal=24, Magic=28, Rare=32, Unique=36
+# - changed the border color of RGB linked sockets to a purple color to increase visibility.
+# 
+# Version 1.5 -
+# 
+# - broke down loot filter into additional categories:  jewels, maps, gems, quests, uniques, rares, magic, normal items
+# - changed border color definitions for quality.  black=normal, dark gray>1, light gray>10, white=20
+# - changed color scheme to be more consistant
+# - added a bunch of background colors to help distinquish type of items when viewing
+# 
+# Version 1.0
+# - currency category
+# - items broken down into rarity level
+# - changed magic item color to be more bluish to help distinquish color better
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------
