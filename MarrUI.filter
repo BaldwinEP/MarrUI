@@ -19,9 +19,11 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0000 # Overide
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0100 # Equipment - 6-Link - Corrupted
 
 Show
@@ -153,6 +155,7 @@ Show
     PlayAlertSound 2 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0105 # Equipment - 6-Link
 
 Show
@@ -272,6 +275,7 @@ Show
     PlayAlertSound 2 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0110 # Equipment - 5-Link - Corrupted
 
 Show
@@ -403,6 +407,7 @@ Show
     PlayAlertSound 2 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0115 # Equipment - 5-Link
 
 Show
@@ -522,6 +527,7 @@ Show
     PlayAlertSound 2 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0120 # Equipment - Gems - Special
 
 Show
@@ -555,6 +561,7 @@ Show
     PlayAlertSound 7 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0130 # Equipment - Flasks
 
 Show
@@ -642,6 +649,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0200 # Non-Equipment - League Items
 
 Show
@@ -676,6 +684,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0220 # League Items - Discontinued
 
 Show
@@ -695,6 +704,7 @@ Show
     SetFontSize 20
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0300 # Currency - Orbs and Scrolls
 
 Show
@@ -766,6 +776,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0310 # Currency - Shards and Fragment
 
 Show
@@ -793,6 +804,7 @@ Show
     SetFontSize 20
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0320 # Currency - Sextants
 
 Show
@@ -820,6 +832,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0330 # Currency - Essences
 
 Show
@@ -832,6 +845,7 @@ Show
     PlayAlertSound 2 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0340 # Currency - RGB Items
 
 Show
@@ -871,6 +885,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0350 # Currency - Gavel, Rock Breaker, Stone Hammer = 20%
 
 Show
@@ -914,6 +929,7 @@ Show
     PlayAlertSound 6 250
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0355 # Currency - Gavel, Rock Breaker, Stone Hammer >= 10%
 
 Show
@@ -953,6 +969,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0360 # Currency - 20% Quality - Corrupted
 
 Show
@@ -991,6 +1008,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0365 # Currency - 20% Quality
 
 Show
@@ -1025,6 +1043,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0370 # Currency - Miscellaneous
 
 Show
@@ -1044,6 +1063,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0400 # Non-Equipment - Quest
 
 Show
@@ -1054,6 +1074,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0410 # Non-Equipment - Labyrinth
 
 Show
@@ -1078,6 +1099,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0420 # Non-Equipment - Divination Cards
 
 Show
@@ -1121,6 +1143,7 @@ Show
     SetFontSize 40
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0430 # Non-Equipment - Jewels - Corrupted
 
 Show
@@ -1160,6 +1183,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0435 # Non-Equipment - Jewels
 
 Show
@@ -1195,6 +1219,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0440 # Non-Equipment - Maps - Corrupted
 
 Show # Maps:T16
@@ -1257,6 +1282,7 @@ Show
     PlayAlertSound 4 200
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0445 # Non-Equipment - Maps
 
 Show # Maps:T16
@@ -1313,6 +1339,7 @@ Show
     PlayAlertSound 4 200
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0450 # Non-Equipment - Map Fragments
 
 Show
@@ -1355,6 +1382,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0500 # Equipment - Gems - Active - Corrupted
 
 Show
@@ -1384,6 +1412,7 @@ Show
     SetFontSize 30
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0505 # Equipment - Gems - Active
 
 Show
@@ -1410,6 +1439,7 @@ Show
     SetFontSize 30
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0505 # Equipment - Gems - Support - Corrupted
 
 Show
@@ -1439,6 +1469,7 @@ Show
     SetFontSize 30
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0505 # Equipment - Gems - Support
 
 Show
@@ -1465,6 +1496,7 @@ Show
     SetFontSize 30
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0510 # Equipment - Fishing Rods
 
 Show
@@ -1486,6 +1518,7 @@ Show
     PlayAlertSound 9 300
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0520 # Equipment - Accessories - Corrupted
 
 Show
@@ -1524,6 +1557,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0525 # Equipment - Accessories
 
 Show
@@ -1558,6 +1592,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0600 # Equipment - Unique Items - Corrupted
 
 Show
@@ -1588,6 +1623,7 @@ Show
     SetFontSize 40
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0605 # Equipment - Unique Items
 
 Show
@@ -1615,6 +1651,7 @@ Show
     SetFontSize 40
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0610 # Equipment - Rare Items - >= 10%
 
 Show
@@ -1645,6 +1682,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0620 # Equipment - Rare Items
 
 Show
@@ -1672,6 +1710,7 @@ Show
     SetFontSize 35
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0700 # Equipment - 4 Linked Sockets - Magic - Leveled
 
 Show
@@ -1692,6 +1731,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0710 # Equipment - 4 Linked Sockets - Normal - Leveled
 
 Show
@@ -1712,6 +1752,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0800 # Equipment - 1H - 3-Linked Sockets - Magic - Leveled
 
 Show
@@ -1734,6 +1775,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0810 # Equipment - 1H - 3-Linked Sockets - Normal - Leveled
 
 Show
@@ -1756,6 +1798,7 @@ Show
     SetFontSize 25
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0900 # Equipment - Magic Items - Leveled
 
 Show
@@ -2114,6 +2157,7 @@ Hide
     SetFontSize 20
 
 # ---------------------------------------------------------------------------
+
 # Section: # 0910 # Equipment - Normal Items - Leveled
 
 Show
@@ -2472,6 +2516,7 @@ Hide
     SetFontSize 20
 
 # ---------------------------------------------------------------------------
+
 # Section: # 9999 # Default
 
 Show
