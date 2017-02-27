@@ -1,11 +1,21 @@
 # Script edited with Filtration - https://github.com/ben-wallis/Filtration
-# ---------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------
 # 
-# Marr's Loot Filter UI v.2.5.0.a
-# 20170210
+# Marr's Loot Filter UI v.2.5.3
+# 20170227
 # 
 # created by Mardread
 # 
+# # Version 2.5.3
+# 
+# - Added 6 Socket Currency (forgot it)
+# - Added Crafting Items (Thanks to ZiggyD's loot filter)
+# - Added Top level normal items border (brown) to help identify top items
+# - Added Labyrinth Items (Dont know how this got removed)
+# - Changed the way accessories are shown
+# - Changed border color on Sextants to match tier group
+# - Removed Quivers from accessories
+#  
 # # Version 2.5.0.a
 # 
 # - Added Backgrounds: Normal-Alt (White derived)
@@ -61,4 +71,4 @@
 # - items broken down into rarity level
 # - changed magic item color to be more bluish to help distinquish color better
 # 
-# ---------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------
