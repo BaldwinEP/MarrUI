@@ -1,3 +1,4 @@
+# Script edited with Filtration - https://github.com/ben-wallis/Filtration
 # -------------------------------------------------------------------------------------------------------------------------------------------
 # 
 # Marr's Loot Filter UI v.2.6.0
@@ -11,69 +12,2467 @@
 # - Added Ancient Reliquary Key - Missed Item
 # - Changed Class Breachstones to Class Misc Map Items
 # 
-# # Version 2.5.3
-# 
-# - Added 6 Socket Currency (forgot it)
-# - Added Crafting Items (Thanks to ZiggyD's loot filter)
-# - Added Top level normal items border (brown) to help identify top items
-# - Added Labyrinth Items (Dont know how this got removed)
-# - Changed the way accessories are shown
-# - Changed border color on Sextants to match tier group
-# - Removed Quivers from accessories
-# 
-# # Version 2.5.0.a
-# 
-# - Added Backgrounds: Normal-Alt (White derived)
-# - Added Text: Magic
-# - Adjusted Categories some more
-# - Adjusted font sizes: Normal=25, Magic=30, Rare=35, Unique=40 (low level magic items are size 25)
-# - Adjusted leveling ranges for normal/magic items
-# - Changed color schemes for leveling ranges
-# - Removed corruption categories in leveling ranges
-# - Removed redundancy in leveling ranges
-# 
-# # Version 2.5.0 -
-# 
-# - Revised from top -> down.  Lootfilter is now more in-line with item breakdown from PoE wiki
-# - Revised version # to be similar to current PoE game version
-# - Added Backgrounds: Normal, Quality, Corruption, Rarity, Non-Equipment, League
-# - Added Borders: Normal, Rarity, Quest, RBG, Corruption
-# - Added Text: Default, Rarity
-# - Added Essences, Splinters, Blessings, Breachstones, Map Fragments
-# - Added League Items
-# - Adjusted categories better, renaming all of them and placing them in a more functional order
-# - Adjusted font sizes: Normal=24, Magic=27, Rare=30, Unique=33
-# - Changed majority of default colors to a color scheme by Viget.com
-# - Removed Backgrounds-Jewels, Currency, Maps, Jewelry, Flasks, Quests, Divination Cards
-# - Removed Borders-Sockets, Superior
-# - Removed Previous League Items that were discontinued
-# 
-# Version 2.4 -
-# 
-# - Removed Orb of Elemental Essence
-# 
-# Version 2.3 -
-# 
-# - added Silver Coin to Currency Section
-# 
-# Version 2.0 -
-# 
-# - rearranged categories
-# - used Neversink's filter as a guide to include item leveling
-# - included item leveling
-# - readjusted font sizes.  Normal=24, Magic=28, Rare=32, Unique=36
-# - changed the border color of RGB linked sockets to a purple color to increase visibility.
-# 
-# Version 1.5 -
-# 
-# - broke down loot filter into additional categories:  jewels, maps, gems, quests, uniques, rares, magic, normal items
-# - changed border color definitions for quality.  black=normal, dark gray>1, light gray>10, white=20
-# - changed color scheme to be more consistant
-# - added a bunch of background colors to help distinquish type of items when viewing
-# 
-# Version 1.0
-# - currency category
-# - items broken down into rarity level
-# - changed magic item color to be more bluish to help distinquish color better
-# 
 # -------------------------------------------------------------------------------------------------------------------------------------------
+
+# Section: # 0000 # Overide
+
+# Section: # 0100 # Equipment - 6-Link - Corrupted
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 215 125 40 200 # BG: Unique >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 211 180 61 200 # BG: Rare >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 188 160 54 200 # BG: Rare < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 17 134 167 200 # BG: Magic >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 15 119 149 200 # BG: Magic < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 207 209 210 200 # BG: Normal-Alt >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+# Section: # 0105 # Equipment - 6-Link
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 215 125 40 200 # BG: Unique >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 211 180 61 200 # BG: Rare >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 188 160 54 200 # BG: Rare < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 17 134 167 200 # BG: Magic >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 15 119 149 200 # BG: Magic < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality = 20
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Quality >= 10
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 207 209 210 200 # BG: Normal-Alt >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 6
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+# Section: # 0110 # Equipment - 5-Link - Corrupted
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 215 125 40 200 # BG: Unique >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 211 180 61 200 # BG: Rare >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 188 160 54 200 # BG: Rare < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 17 134 167 200 # BG: Magic >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 15 119 149 200 # BG: Magic < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 207 209 210 200 # BG: Normal-Alt >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Corrupted True
+    Rarity = Normal
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+# Section: # 0115 # Equipment - 5-Link
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 215 125 40 200 # BG: Unique >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 211 180 61 200 # BG: Rare >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 188 160 54 200 # BG: Rare < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 17 134 167 200 # BG: Magic >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 15 119 149 200 # BG: Magic < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 30
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality = 20
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Quality >= 10
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 207 209 210 200 # BG: Normal-Alt >= 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+Show
+    LinkedSockets = 5
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 25
+    PlayAlertSound 2 300
+
+# Section: # 0120 # Equipment - Gems - Special
+
+Show
+    Quality = 20
+    Class "Gems"
+    BaseType "Portal" "Empower Support" "Enlighten Support"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 92 167 147 200 # BG: Gems = 20
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 7 300
+
+Show
+    Quality >= 10
+    Class "Gems"
+    BaseType "Portal" "Empower Support" "Enlighten Support"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 83 150 132 200 # BG: Gems >= 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 7 300
+
+Show
+    Quality < 10
+    Class "Gems"
+    BaseType "Portal" "Empower Support" "Enlighten Support"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 74 134 118 200 # BG: Gems < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 7 300
+
+# Section: # 0130 # Equipment - Flasks
+
+Show
+    Quality = 20
+    Class "Flasks"
+    Rarity = Unique
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    Quality >= 5
+    Class "Flasks"
+    Rarity = Unique
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 215 125 40 200 # BG: Unique >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    Quality < 5
+    Class "Flasks"
+    Rarity = Unique
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    Quality = 20
+    Class "Flasks"
+    Rarity = Magic
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 5
+    Class "Flasks"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality < 5
+    Class "Utility Flasks" "Hybrid Flasks"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality = 20
+    Class "Flasks"
+    Rarity = Normal
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 5
+    Class "Flasks"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality < 5
+    Class "Utility Flasks" "Hybrid Flasks"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+# Section: # 0140 # Equipment - Life / Mana Flasks - Magic - Leveled
+
+Show
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 6
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 3
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 12
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 6
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 18
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 12
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 24
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 18
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 30
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 24
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 36
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 30
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 42
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 36
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 50
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 42
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 60
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 50
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel < 65
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 60
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    ItemLevel >= 65
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Hide
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+# Section: # 0150 # Equipment - Life / Mana Flasks - Normal - Leveled
+
+Show
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 6
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 3
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 12
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 6
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 18
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 12
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 24
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 18
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 30
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 24
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 36
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 30
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 42
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 36
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 50
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 42
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 60
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 50
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel < 65
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    DropLevel >= 60
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    ItemLevel >= 65
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Hide
+    Class "Life Flasks" "Mana Flasks"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+# Section: # 0160 # Crafting
+
+Show
+    Class "Helmets"
+    BaseType "Royal Burgonet" "Eternal Burgonet" "Lion Pelt" "Hubris Circlet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Deicide Mask"
+    Rarity <= Magic
+    ItemLevel >= 84
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 150 111 51 200 # BG: Crafting
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+Show
+    BaseType "Occultist's Vestment" "Prophecy Wand" "Judgement Staff" "Gold Ring" "Glorious Plate" "Sorcerer Boots" "Desert Brigandine" "Assassin's Garb" "Jewelled Foil" "Deicide Mask"
+    Rarity = Normal
+    ItemLevel >= 60
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 150 111 51 200 # BG: Crafting
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+# Section: # 0170 # Top Level - Normal Items
+
+Show
+    LinkedSockets >= 3
+    DropLevel <= 70
+    BaseType "Runic Hatchet" "Fleshripper" "Gemini Claw" "Sai" "Maraketh Bow" "Behemoth Mace" "Sambar Sceptre" "Coronal Maul" "Eclipse Staff" "Tiger Hook" "Dragoon Sword" "Exquisite Blade" "Profane Wand"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 150 111 51 # B: Top
+    SetFontSize 30
+
+Show
+    LinkedSockets >= 4
+    DropLevel <= 70
+    BaseType "Glorious Plate" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Assassin's Garb" "Titan Greaves" "Slink Boots" "Sorcerer Boots" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Dragonscale Gauntlets" "Crusader Gloves" "Murder Mitts" "Eternal Burgonet" "Lion Pelt" "Hubris Circlet" "Nightmare Bascinet" "Bone Helmet" "Deicide Mask" "Pinnacle Tower Shield" "Imperial Buckler" "Titanium Spirit Shield" "Elegant Round Shield" "Archon Kite Shield" "Supreme Spiked Shield"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 150 111 51 # B: Top
+    SetFontSize 30
+
+# Section: # 0200 # Non-Equipment - League Items
+
+Show
+    Class "Leaguestone"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+
+Show
+    Class "Misc Map Items"
+    BaseType "Breachstone" "Ancient Reliquary Key"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+Show
+    Class "Currency"
+    BaseType "Blessing"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+Show
+    Class "Currency"
+    BaseType "Splinter"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+# Section: # 0210 # Non-Equipment - League Items - Discontinued
+
+Show
+    Class "Currency"
+    BaseType "Eternal Orb"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Show
+    Class "Currency"
+    BaseType "Perandus Coin"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 162 184 108 200 # BG: NE-League
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+# Section: # 0220 # Non-Equipment - Labyrinth Items
+
+Show
+    BaseType "Golden Key"
+    SetTextColor 255 215 0
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+Show
+    BaseType "Silver Key"
+    SetTextColor 192 192 192
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+Show
+    BaseType "Treasure Key"
+    SetTextColor 184 115 51
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+Show
+    Class "Labyrinth Trinket"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 162 184 108 # B: Quest
+    SetFontSize 30
+
+# Section: # 0300 # Currency - Orbs and Scrolls
+
+Show
+    Class "Currency"
+    BaseType "Mirror of Kalandra"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 6 300
+
+Show
+    Class "Currency"
+    BaseType "Divine Orb" "Chaos Orb" "Exalted Orb" "Albino Rhoa Feather" "Eternal Orb"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 6 300
+
+Show
+    Class "Currency"
+    BaseType "Vaal Orb"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show
+    Class "Currency"
+    BaseType "Orb of Scouring" "Orb of Regret" "Blessed Orb" "Regal Orb" "Orb of Alchemy"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show
+    Class "Currency"
+    BaseType "Orb of Alteration" "Orb of Augmentation" "Orb of Chance" "Orb of Transmutation"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 30
+
+Show
+    Class "Currency"
+    BaseType "Jeweller's Orb" "Chromatic Orb" "Orb of Fusing"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 30
+
+Show
+    Class "Currency"
+    BaseType "Unshaping Orb"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+Show
+    Class "Currency"
+    BaseType "Cartographer's Chisel" "Gemcutter's Prism" "Glassblower's Bauble" "Blacksmith's Whetstone" "Armourer's Scrap"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+Show
+    Class "Currency"
+    BaseType "Portal Scroll" "Scroll of Wisdom"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+# Section: # 0310 # Currency - Shards and Fragment
+
+Show
+    Class "Currency"
+    BaseType "Alchemy Shard"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 20
+
+Show
+    Class "Currency"
+    BaseType "Alteration Shard" "Transmutation Shard"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 20
+
+Show
+    Class "Currency"
+    BaseType "Scroll Fragment"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 20
+
+# Section: # 0320 # Currency - Sextants and Seals
+
+Show
+    Class "Currency"
+    BaseType "Master Cartographer's Sextant" "Master Cartographer's Seal"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 35
+
+Show
+    Class "Currency"
+    BaseType "Journeyman Cartographer's Sextant" "Journeyman Cartographer's Seal"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+
+Show
+    Class "Currency"
+    BaseType "Apprentice Cartographer's Sextant" "Apprentice Cartographer's Seal"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+# Section: # 0330 # Currency - Essences
+
+Show
+    Class "Currency"
+    BaseType "Essence"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+# Section: # 0340 # Currency - RGB Items
+
+Show
+    LinkedSockets >= 3
+    SocketGroup "rgb"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 40
+
+Show
+    LinkedSockets >= 3
+    SocketGroup "rgb"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 35
+
+Show
+    LinkedSockets >= 3
+    SocketGroup "rgb"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 30
+
+Show
+    LinkedSockets >= 3
+    SocketGroup "rgb"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 25
+
+# Section: # 0350 # Currency - Gavel, Rock Breaker, Stone Hammer = 20%
+
+Show
+    Quality = 20
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 40
+    PlayAlertSound 6 250
+
+Show
+    Quality = 20
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+    PlayAlertSound 6 250
+
+Show
+    Quality = 20
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+    PlayAlertSound 6 250
+
+Show
+    Quality = 20
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+    PlayAlertSound 6 250
+
+# Section: # 0355 # Currency - Gavel, Rock Breaker, Stone Hammer >= 10%
+
+Show
+    Quality >= 10
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+
+Show
+    Quality >= 10
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+Show
+    Quality >= 10
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+Show
+    Quality >= 10
+    BaseType "Gavel" "Stone Hammer" "Rock Breaker"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+# Section: # 0360 # Currency - 20% Quality - Corrupted
+
+Show
+    Quality = 20
+    Corrupted True
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 40
+
+Show
+    Quality = 20
+    Corrupted True
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 35
+
+Show
+    Quality = 20
+    Corrupted True
+    Rarity = Magic
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 30
+
+Show
+    Quality = 20
+    Corrupted True
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 25
+
+# Section: # 0365 # Currency - 20% Quality
+
+Show
+    Quality = 20
+    Rarity = Unique
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 239 139 44 200 # BG: Unique = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 40
+
+Show
+    Quality = 20
+    Rarity = Rare
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 235 200 68 200 # BG: Rare = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 35
+
+Show
+    Quality = 20
+    Rarity = Magic
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 19 149 186 200 # BG: Magic = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 30
+
+Show
+    Quality = 20
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 218 222 223 200 # BG: Normal-Alt = 20
+    SetBorderColor 170 158 130 # B: Currency
+    SetFontSize 25
+
+# Section: # 0370 # Currency - 6-Slots - Unlinked
+
+Show
+    Sockets = 6
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    Sockets = 6
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    Sockets = 6
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+Show
+    Sockets = 6
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 153 47 192 # B: RBG
+    SetFontSize 35
+    PlayAlertSound 2 300
+
+# Section: # 0380 # Currency - Miscellaneous
+
+Show
+    Class "Currency"
+    BaseType "Stacked Deck"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+Show
+    Class "Currency"
+    BaseType "Prophecy"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 170 158 130 200 # BG: Currency
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+# Section: # 0400 # Non-Equipment - Quest
+
+Show
+    Class "Quest Items"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 181 198 137 200 # BG: NE-Quest
+    SetBorderColor 162 184 108 # B: Quest
+    SetFontSize 35
+
+# Section: # 0410 # Non-Equipment - Labyrinth
+
+Show
+    Class "Labyrinth Map Item"
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 162 184 108 # B: Quest
+    SetFontSize 35
+
+Show
+    Class "Labyrinth Item"
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 162 184 108 # B: Quest
+    SetFontSize 35
+
+Show
+    Class "Labyrinth Trinket"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 162 184 108 # B: Quest
+    SetFontSize 35
+
+# Section: # 0420 # Non-Equipment - Divination Cards
+
+Show
+    Class "Divination Card"
+    BaseType "House of Mirrors" "The Doctor" "The Fiend" "Hunter's Reward" "The Dragon's Heart" "Mawr Blaidd" "The Last One Standing" "The Offering" "The Ethereal" "The Queen" "Abandoned Wealth" "The Formless Sea" "The Brittle Emperor" "The Immortal" "The Artist" "The Thaumaturgist" "Wealth and Power" "The Demoness" "Pride Before the Fall" "The Enlightened" "Heterochromia" "The King's Heart" "Bowyer's Dream" "The Hunger" "The Celestial Justicar" "The Porcupine" "Spark and the Flame"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 2 300
+
+Show
+    Class "Divination Card"
+    BaseType "Chaotic Disposition" "The Void" "The Cartographer" "The Dapper Prodigy" "The Vast" "The Dark Mage" "Last Hope" "The Valkyrie" "The Sephirot" "Time-Lost Relic" "The Harvester" "The Hoarder" "Emperor of Purity" "The Chains that Bind" "The Warlord" "The Wolf" "The Fletcher" "The Aesthete" "Earth Drinker" "Polymath" "The Forsaken" "Saint's Treasure" "Standoff"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 40
+
+Show
+    Class "Divination Card"
+    BaseType "The Road to Power" "The Arena Champion" "The Gladiator" "The Stormcaller" "Glimmer of Hope" "The Tyrant" "The Cursed King" "The Avenger" "The Scavenger" "Lost Worlds" "The Union" "The Risk" "The Trial" "Scholar of the Seas" "Lucky Deck" "Humility" "The Penitent" "The Penitent" "The Surveyor" "Lysah's Respite" "The Inventor" "The Watcher" "The Soul" "The Jester" "Vinia's Token" "Rats" "The Wrath" "Hope" "Treasure Hunter" "The Explorer" "The Body" "The Encroaching Darkness" "Hubris" "Jack in the Box" "The Traitor" "Assassin's Favour" "The Battle Born" "Valley of Steel Boxes" "Wolven King's Bite" "Wretched"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 40
+
+Show
+    Class "Divination Card"
+    BaseType "The Wolf's Shadow"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 40
+
+Show
+    Class "Divination Card"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 40
+
+# Section: # 0430 # Non-Equipment - Jewels - Corrupted
+
+Show
+    Corrupted True
+    Class "Jewel"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 40
+
+Show
+    Corrupted True
+    Class "Jewel"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 35
+
+Show
+    Corrupted True
+    Class "Jewel"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 30
+
+Show
+    Corrupted True
+    Class "Jewel"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 25
+
+# Section: # 0435 # Non-Equipment - Jewels
+
+Show
+    Class "Jewel"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+
+Show
+    Class "Jewel"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+Show
+    Class "Jewel"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+Show
+    Class "Jewel"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 63 20 82 200 # BG: Jewels
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+# Section: # 0440 # Non-Equipment - Maps - Corrupted
+
+Show # Maps:T16
+    Corrupted True
+    Class "Maps"
+    BaseType "Forge of the Phoenix Map" "Maze of the Minotaur Map" "Lair of the Hydra Map" "Pit of the Chimera Map" "Vaal Temple Map"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 6 300
+
+Show # Maps:T15
+    Corrupted True
+    DropLevel >= 82
+    Class "Maps"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show # Maps:T11 - 14
+    Corrupted True
+    DropLevel >= 78
+    Class "Maps"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 30
+    PlayAlertSound 4 300
+
+Show # Maps:T6 - 10
+    Corrupted True
+    DropLevel >= 73
+    Class "Maps"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 26
+    PlayAlertSound 4 300
+
+Show # Maps:T1 - 5
+    Corrupted True
+    DropLevel >= 68
+    Class "Maps"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+    PlayAlertSound 4 200
+
+Show
+    Corrupted True
+    Class "Maps"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 25
+    PlayAlertSound 4 200
+
+# Section: # 0445 # Non-Equipment - Maps
+
+Show # Maps:T16
+    Class "Maps"
+    BaseType "Forge of the Phoenix Map" "Maze of the Minotaur Map" "Lair of the Hydra Map" "Pit of the Chimera Map" "Vaal Temple Map"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 6 300
+
+Show # Maps:T15
+    DropLevel >= 82
+    Class "Maps"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+    PlayAlertSound 6 300
+
+Show # Maps:T11 - 14
+    DropLevel >= 78
+    Class "Maps"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 30
+    PlayAlertSound 4 300
+
+Show # Maps:T6 - 10
+    DropLevel >= 73
+    Class "Maps"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+    PlayAlertSound 4 300
+
+Show # Maps:T1 - 5
+    DropLevel >= 68
+    Class "Maps"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+    PlayAlertSound 4 200
+
+Show
+    Class "Maps"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 25
+    PlayAlertSound 4 200
+
+# Section: # 0450 # Non-Equipment - Map Fragments
+
+Show
+    Class "Map Fragments"
+    BaseType "Fragment of the"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+
+Show
+    Class "Map Fragments"
+    BaseType "key"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 235 200 68 # B: 5-Link
+    SetFontSize 35
+
+Show
+    Class "Map Fragments"
+    BaseType "mortal"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 30
+
+Show
+    Class "Map Fragments"
+    BaseType "Sacrifice"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+Show
+    Class "Map Fragments"
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 13 60 85 200 # BG: NE
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 25
+
+# Section: # 0500 # Equipment - Gems - Active - Corrupted
+
+Show
+    Quality = 20
+    Corrupted True
+    Class "Active Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 92 167 147 200 # BG: Gems = 20
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+Show
+    Quality >= 10
+    Corrupted True
+    Class "Active Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 83 150 132 200 # BG: Gems >= 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+Show
+    Corrupted True
+    Class "Active Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 74 134 118 200 # BG: Gems < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+# Section: # 0505 # Equipment - Gems - Active
+
+Show
+    Quality = 20
+    Class "Active Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 92 167 147 200 # BG: Gems = 20
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+Show
+    Quality >= 10
+    Class "Active Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 83 150 132 200 # BG: Gems >= 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+Show
+    Class "Active Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 74 134 118 200 # BG: Gems < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 30
+
+# Section: # 0505 # Equipment - Gems - Support - Corrupted
+
+Show
+    Quality = 20
+    Corrupted True
+    Class "Support Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 92 167 147 200 # BG: Gems = 20
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+Show
+    Quality >= 10
+    Corrupted True
+    Class "Support Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 83 150 132 200 # BG: Gems >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+Show
+    Corrupted True
+    Class "Support Skill Gems"
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 74 134 118 200 # BG: Gems < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+# Section: # 0505 # Equipment - Gems - Support
+
+Show
+    Quality = 20
+    Class "Support Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 92 167 147 200 # BG: Gems = 20
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+Show
+    Quality >= 10
+    Class "Support Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 83 150 132 200 # BG: Gems >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+Show
+    Class "Support Skill Gems"
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 74 134 118 200 # BG: Gems < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+
+# Section: # 0510 # Equipment - Fishing Rods
+
+Show
+    BaseType "Fishing Rod"
+    Rarity = Unique
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 239 139 44 # B: 6-Link
+    SetFontSize 40
+    PlayAlertSound 9 300
+
+Show
+    BaseType "Fishing Rod"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 180 182 183 200 # BG: Normal-Alt < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 30
+    PlayAlertSound 9 300
+
+# Section: # 0520 # Equipment - Accessories - Corrupted
+
+Show
+    Corrupted True
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Unique
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 191 111 35 200 # BG: Unique < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 40
+
+Show
+    Corrupted True
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Rare
+    SetTextColor 173 41 26 # T: Corrupted
+    SetBackgroundColor 188 160 54 200 # BG: Rare < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 35
+
+# Section: # 0525 # Equipment - Accessories
+
+Show
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 60 5 5 200 # BG: Accessories
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 40
+
+Show
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 60 5 5 200 # BG: Accessories
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 35
+
+Show
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 5 5 200 # BG: Accessories
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 30
+
+# Section: # 0530 # Equipment - Accessories - Normal Items - Leveled
+
+Hide
+    BaseType "Paua Ring" "Coral Amulet" "Studded Belt" "Cloth Belt"
+    Rarity = Normal
+    ItemLevel >= 12
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 5 5 200 # BG: Accessories
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Show
+    Class "Rings" "Amulets" "Belts"
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 5 5 200 # BG: Accessories
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+# Section: # 0600 # Equipment - Unique Items - Corrupted
+
+Show
+    LinkedSockets = 4
+    Quality >= 10
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 40
+
+Show
+    LinkedSockets = 3
+    Quality >= 10
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 40
+
+Show
+    Quality >= 10
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 40
+
+# Section: # 0605 # Equipment - Unique Items
+
+Show
+    LinkedSockets = 4
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 40
+
+Show
+    LinkedSockets = 3
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 40
+
+Show
+    Rarity = Unique
+    SetTextColor 239 139 44 # T: Unique
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 40
+
+# Section: # 0610 # Equipment - Rare Items - >= 10%
+
+Show
+    LinkedSockets = 4
+    Quality >= 10
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 35
+
+Show
+    LinkedSockets = 3
+    Quality >= 10
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+Show
+    Quality >= 10
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 35
+
+# Section: # 0620 # Equipment - Rare Items
+
+Show
+    LinkedSockets = 4
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 35
+
+Show
+    LinkedSockets = 3
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 35
+
+Show
+    Rarity = Rare
+    SetTextColor 235 200 68 # T: Rare
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 21 21 21 # B: Normal
+    SetFontSize 35
+
+# Section: # 0700 # Equipment - 4-Linked Sockets - Magic - Leveled
+
+Show
+    LinkedSockets = 4
+    Quality >= 10
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 25
+
+Show
+    LinkedSockets = 4
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 25
+
+# Section: # 0710 # Equipment - 4-Linked Sockets - Normal - Leveled
+
+Show
+    LinkedSockets = 4
+    Quality >= 10
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 25
+
+Show
+    LinkedSockets = 4
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 149 186 # B: 4-Link
+    SetFontSize 25
+
+# Section: # 0800 # Equipment - 3-Linked Sockets - Magic - Leveled
+
+Show
+    LinkedSockets = 3
+    Quality >= 10
+    Rarity = Magic
+    ItemLevel <= 32
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+Show
+    LinkedSockets = 3
+    Rarity = Magic
+    ItemLevel <= 32
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+# Section: # 0810 # Equipment - 3-Linked Sockets - Normal - Leveled
+
+Show
+    LinkedSockets = 3
+    Quality >= 10
+    Rarity = Normal
+    ItemLevel <= 32
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+Show
+    LinkedSockets = 3
+    Rarity = Normal
+    ItemLevel <= 32
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 241 243 244 # B: 3-Link
+    SetFontSize 25
+
+# Section: # 0900 # Equipment - Magic Items - Leveled
+
+Show
+    Quality >= 10
+    Rarity = Magic
+    ItemLevel <= 12
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 4
+    Rarity = Magic
+    ItemLevel <= 14
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 6
+    Rarity = Magic
+    ItemLevel <= 16
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 8
+    Rarity = Magic
+    ItemLevel <= 18
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 10
+    Rarity = Magic
+    ItemLevel <= 20
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 15
+    Rarity = Magic
+    ItemLevel <= 24
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 19
+    Rarity = Magic
+    ItemLevel <= 28
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 23
+    Rarity = Magic
+    ItemLevel <= 32
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 27
+    Rarity = Magic
+    ItemLevel <= 36
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 31
+    Rarity = Magic
+    ItemLevel <= 40
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 36
+    Rarity = Magic
+    ItemLevel <= 44
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 40
+    Rarity = Magic
+    ItemLevel <= 48
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 45
+    Rarity = Magic
+    ItemLevel <= 52
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 49
+    Rarity = Magic
+    ItemLevel <= 56
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 54
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 58
+    Rarity = Magic
+    ItemLevel <= 64
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 60
+    Rarity = Magic
+    ItemLevel < 65
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 65
+    Rarity = Magic
+    ItemLevel >= 65
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Hide
+    Quality >= 10
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Show
+    Rarity = Magic
+    ItemLevel <= 12
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Hide
+    Rarity = Magic
+    SetTextColor 19 149 186 # T: Magic
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+# Section: # 0910 # Equipment - Normal Items - Leveled
+
+Show
+    Quality >= 10
+    Rarity = Normal
+    ItemLevel <= 12
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 4
+    Rarity = Normal
+    ItemLevel <= 14
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 6
+    Rarity = Normal
+    ItemLevel <= 16
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 8
+    Rarity = Normal
+    ItemLevel <= 18
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 10
+    Rarity = Normal
+    ItemLevel <= 20
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 15
+    Rarity = Normal
+    ItemLevel <= 24
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 19
+    Rarity = Normal
+    ItemLevel <= 28
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 23
+    Rarity = Normal
+    ItemLevel <= 32
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 27
+    Rarity = Normal
+    ItemLevel <= 36
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 31
+    Rarity = Normal
+    ItemLevel <= 40
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 36
+    Rarity = Normal
+    ItemLevel <= 44
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 40
+    Rarity = Normal
+    ItemLevel <= 48
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 45
+    Rarity = Normal
+    ItemLevel <= 52
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 49
+    Rarity = Normal
+    ItemLevel <= 56
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 54
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 58
+    Rarity = Normal
+    ItemLevel <= 64
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 60
+    Rarity = Normal
+    ItemLevel < 65
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Show
+    Quality >= 10
+    DropLevel >= 65
+    Rarity = Normal
+    ItemLevel >= 65
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 25
+
+Hide
+    Quality >= 10
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 60 70 80 200 # BG: Normal >= 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Show
+    Rarity = Normal
+    ItemLevel <= 12
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+Hide
+    Rarity = Normal
+    SetTextColor 241 243 244 # T: Normal
+    SetBackgroundColor 40 45 50 200 # BG: Normal < 10
+    SetBorderColor 19 21 22 # B: Normal
+    SetFontSize 20
+
+# Section: # 9999 # Default
+
+Show
+    SetTextColor 19 21 22 # T: Normal-Alt
+    SetBackgroundColor 80 95 110 200 # BG: Normal = 20
+    SetBorderColor 154 38 23 # B: Corrupted
+    SetFontSize 30
