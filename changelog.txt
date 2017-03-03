@@ -1,10 +1,16 @@
 # Script edited with Filtration - https://github.com/ben-wallis/Filtration
 # -------------------------------------------------------------------------------------------------------------------------------------------
 # 
-# Marr's Loot Filter UI v.2.5.3
-# 20170227
+# Marr's Loot Filter UI v.2.6.0
+# 20170303
 # 
 # created by Mardread
+# 
+# # Version 2.6
+# 
+# - Added Class Leaguestones
+# - Added Ancient Reliquary Key - Missed Item
+# - Changed Class Breachstones to Class Misc Map Items
 # 
 # # Version 2.5.3
 # 
@@ -15,7 +21,7 @@
 # - Changed the way accessories are shown
 # - Changed border color on Sextants to match tier group
 # - Removed Quivers from accessories
-#  
+# 
 # # Version 2.5.0.a
 # 
 # - Added Backgrounds: Normal-Alt (White derived)
